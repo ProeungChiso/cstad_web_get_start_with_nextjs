@@ -14,7 +14,7 @@ export default function FeatureCardComponent() {
           alt="Card background"
           className="object-cover rounded-xl"
           src="/images/ImgCard.jpg"
-          width={270}
+          width={400}
         />
       </CardBody>
     </Card>

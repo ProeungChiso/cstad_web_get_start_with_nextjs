@@ -17,6 +17,9 @@ const config: Config = {
       },
     },
   },
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
   plugins: [nextui(),
     require("daisyui")],
 };

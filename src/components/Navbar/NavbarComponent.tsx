@@ -2,9 +2,11 @@
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react";
 import { AcmeLogo } from "../../../public/images/AcmeLogo";
+import { usePathname } from "next/navigation";
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const pathName = usePathname();
 
   const menuItems = [
     "Profile",
@@ -33,28 +35,28 @@ export default function NavbarComponent() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem isActive>
-          <Link href="/features" aria-current="page">
+        <NavbarItem>
+          <Link className={`${pathName === '/features' ? 'font-bold' : ''}`} href="/features">
             Features
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/about-us">
+          <Link className={`${pathName === '/about-us' ? 'font-bold' : ''}`} href="/about-us">
             About us
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/contact">
+          <Link className={`${pathName === '/contact' ? 'font-bold' : ''}`}  href="/contact">
             Contact
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href="/login">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button as={Link} color="primary" href="/sign-up" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>

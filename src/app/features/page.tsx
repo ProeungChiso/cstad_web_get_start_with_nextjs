@@ -1,11 +1,9 @@
 import FeatureCardComponent from '@/components/Card/FeatureCardComponent';
-import CarouselComponent from '@/components/Carousel/CarouselComponent';
 import React from 'react'
 
 const feature = () => {
     return (
         <>
-            <CarouselComponent/>
             <div className='container mx-auto py-10'>
                 <h1 className='
                 text-2xl
@@ -20,7 +18,12 @@ const feature = () => {
                 md:grid-cols-2 
                 lg:grid-cols-4 
                 gap-2
-                py-10'>
+                py-5
+                px-5
+                md:px-5
+                lg:px-0
+                md:py-10
+                lg:py-10'>
                     <FeatureCardComponent/>
                     <FeatureCardComponent/>
                     <FeatureCardComponent/>
