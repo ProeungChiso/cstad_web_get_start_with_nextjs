@@ -36,8 +36,18 @@ export default function NavbarComponent() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
+          <Link className={`${pathName === '/' ? 'font-bold' : ''}`} href="/">
+            Home
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
           <Link className={`${pathName === '/features' ? 'font-bold' : ''}`} href="/features">
             Features
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className={`${pathName === '/products' ? 'font-bold' : ''}`} href="/products">
+            Products
           </Link>
         </NavbarItem>
         <NavbarItem>
