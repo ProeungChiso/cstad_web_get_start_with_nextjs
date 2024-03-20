@@ -9,16 +9,29 @@ export default function NavbarComponent() {
   const pathName = usePathname();
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    {
+      title: "Home",
+      path: "/"
+    },
+    {
+      title: "Features",
+      path: "/features"
+    }
+    ,
+    {
+      title: "Products",
+      path: "/products"
+    }
+    ,
+    {
+      title: "About us",
+      path: "/about-us"
+    },
+    {
+      title: "Contact",
+      path: "/contact"
+    }
+    
   ];
 
   return (
@@ -33,33 +46,14 @@ export default function NavbarComponent() {
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
       </NavbarContent>
-
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link className={`${pathName === '/' ? 'font-bold' : ''}`} href="/">
-            Home
+        {menuItems.map((item, index)=>(
+          <NavbarItem key={index}>
+          <Link className={`${pathName === item.path ? 'font-bold' : ''}`} href={item.path}>
+            {item.title}
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className={`${pathName === '/features' ? 'font-bold' : ''}`} href="/features">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className={`${pathName === '/products' ? 'font-bold' : ''}`} href="/products">
-            Products
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className={`${pathName === '/about-us' ? 'font-bold' : ''}`} href="/about-us">
-            About us
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className={`${pathName === '/contact' ? 'font-bold' : ''}`}  href="/contact">
-            Contact
-          </Link>
-        </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
@@ -75,14 +69,11 @@ export default function NavbarComponent() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
               className="w-full"
-              href="#"
+              href={item.path}
               size="lg"
             >
-              {item}
+              {item.title}
             </Link>
           </NavbarMenuItem>
         ))}
