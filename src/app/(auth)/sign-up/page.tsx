@@ -1,4 +1,14 @@
+import { Metadata } from 'next';
 import React from 'react'
+
+export const metadata: Metadata = {
+  icons:{
+    icon:"/images/cstad.png"
+  },
+  title:"Signup",
+  description:"This is description signup",
+  keywords:['shop', 'sell'],
+};
 
 const signUp = () => {
   return (

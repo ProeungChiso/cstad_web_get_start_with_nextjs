@@ -1,4 +1,14 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  icons:{
+    icon:"/images/cstad.png"
+  },
+  title:"Login",
+  description:"This is description login",
+  keywords:['shop', 'sell'],
+};
 
 export default function Example() {
   return (

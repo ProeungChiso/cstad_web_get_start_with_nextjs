@@ -1,5 +1,15 @@
 import FeatureCardComponent from '@/components/Card/FeatureCardComponent';
+import { Metadata } from 'next';
 import React from 'react'
+
+export const metadata: Metadata = {
+    icons:{
+      icon:"/images/cstad.png"
+    },
+    title:"Features",
+    description:"This is description features",
+    keywords:['shop', 'sell'],
+  };
 
 const feature = () => {
     return (

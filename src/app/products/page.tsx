@@ -2,8 +2,8 @@ import CardComponent from "@/components/Card/CardComponent";
 import { ProductType } from "@/types/product";
 import { Suspense } from "react";
 import LoadingComponent from "../loading";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Metadata } from "next";
 
 
 async function fetchProduct() {
@@ -13,6 +13,15 @@ async function fetchProduct() {
   const res = await product.json();
   return res.products;
 }
+
+export const metadata: Metadata = {
+  icons:{
+    icon:"/images/cstad.png"
+  },
+  title:"Products",
+  description:"This is description products",
+  keywords:['shop', 'sell'],
+};
 
 export default async function products() {
   const product = await fetchProduct();

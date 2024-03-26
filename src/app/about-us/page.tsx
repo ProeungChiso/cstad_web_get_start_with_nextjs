@@ -1,5 +1,15 @@
+import { Metadata } from 'next';
 import Image from 'next/image';
 import React from 'react'
+
+export const metadata: Metadata = {
+  icons:{
+    icon:"/images/cstad.png"
+  },
+  title:"About us",
+  description:"This is description about us",
+  keywords:['shop', 'sell'],
+};
 
 function aboutUs() {
   return (
